@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
-import Time from "./Time.js";
+import Buttons from "./Buttons";
+import Time from "./Time";
 
-const Timer = () => {
+const Stopwatch = () => {
   const [time, setTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -38,19 +39,16 @@ const Timer = () => {
     <div>
       <label>TIMER</label>
       <Time time={time} />
-      <div className="buttons">
-        {!isActive && !isPaused ? (
-          <button onClick={handleStart}>Start</button>
-        ) : isPaused ? (
-          <button onClick={handlePause}>Pause</button>
-        ) : (
-          <button onClick={handleResume}>Resume</button>
-        )}
-        <button>Stop ?? </button>
-        <button onClick={handleReset}>Reset</button>
-      </div>
+      <Buttons
+        active={isActive}
+        isPaused={isPaused}
+        handleStart={handleStart}
+        handlePause={handlePause}
+        handleResume={handleResume}
+        handleReset={handleReset}
+      />
     </div>
   );
 };
 
-export default Timer;
+export default Stopwatch;
