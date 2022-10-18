@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import Buttons from "./Buttons";
 import Time from "./Time";
 import SaveTime from "./SaveTime";
+import TimePosts from "./posts/TimePosts";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
-
 import { Button } from "@mui/material";
 
 const Stopwatch = () => {
@@ -65,6 +65,8 @@ const Stopwatch = () => {
       </Button>
 
       <SaveTime time={time} open={modalOpen} toggleModal={toggleModal} />
+
+      <TimePosts />
     </div>
   );
 };
