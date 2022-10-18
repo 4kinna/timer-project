@@ -13,8 +13,10 @@ const TimePosts = () => {
 
   return (
     <div>
-      {posts.map((post) => (
-        <Post post={post} />
+      {posts.map((post, index) => (
+        <div key={index}>
+          <Post post={post} />
+        </div>
       ))}
 
       {console.log(timePosts)}
