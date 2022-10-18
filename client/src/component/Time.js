@@ -1,4 +1,4 @@
-export const Time = (props) => {
+const Time = (props) => {
   return (
     <h1>
       <span className="hour">
