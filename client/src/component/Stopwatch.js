@@ -18,7 +18,7 @@ const Stopwatch = () => {
     setIsPaused(true);
     countRef.current = setInterval(() => {
       setTime((time) => time + 10);
-    }, 1000);
+    }, 10);
   };
 
   const handlePause = () => {
@@ -37,7 +37,7 @@ const Stopwatch = () => {
     setIsPaused(true);
     countRef.current = setInterval(() => {
       setTime((time) => time + 10);
-    }, 1000);
+    }, 10);
   };
 
   const toggleModal = (toggleVal) => {

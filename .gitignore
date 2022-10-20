@@ -25,3 +25,4 @@ yarn-error.log*
 
 # Keep environment variables out of version control
 .env
+node_modules
