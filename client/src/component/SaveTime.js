@@ -16,25 +16,31 @@ const style = {
 };
 
 const SaveTime = (props) => {
-  const { time, open, toggleModal } = props;
+  const { time, open, toggleModal, setFetchTimes } = props;
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
     setInput(() => e.target.value);
   };
 
-  const handelSave = (e) => {
+  const handelSave = async (e) => {
     e.preventDefault();
 
-    const timeNote = {
-      note: input,
-      time: time / 10,
-      savedAt: new Date(),
-    };
-    console.log(timeNote);
-    console.log("SAVE DATA TO DATABASE");
-    setInput("");
+    //formating time as a string so it matches db
+    const timeString = `${("0" + Math.floor((time / 60000) % 60)).slice(-2)}:${(
+      "0" + Math.floor((time / 1000) % 60)
+    ).slice(-2)}:${("0" + ((time / 10) % 100)).slice(-2)}`;
+
+    await fetch("http://localhost:5000/api/stopwatch/", {
+      method: "POST",
+      body: JSON.stringify({ note: input, time: timeString }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
     toggleModal(false);
+    setFetchTimes(true);
   };
 
   return (

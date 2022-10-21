@@ -11,6 +11,7 @@ const Stopwatch = () => {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [fetchTimes, setFetchTimes] = useState(true);
   const countRef = useRef(null);
 
   const handleStart = () => {
@@ -64,9 +65,14 @@ const Stopwatch = () => {
         <SaveAltIcon onClick={() => toggleModal(true)} />
       </Button>
 
-      <SaveTime time={time} open={modalOpen} toggleModal={toggleModal} />
+      <SaveTime
+        setFetchTimes={setFetchTimes}
+        time={time}
+        open={modalOpen}
+        toggleModal={toggleModal}
+      />
 
-      <TimePosts />
+      <TimePosts fetchTimes={fetchTimes} setFetchTimes={setFetchTimes} />
     </div>
   );
 };
