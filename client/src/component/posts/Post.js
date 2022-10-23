@@ -1,7 +1,7 @@
 import { Card, Stack, Button, IconButton } from "@mui/material";
-import RemoveIcon from '@mui/icons-material/Remove';
-import Divider from '@mui/material/Divider';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import RemoveIcon from "@mui/icons-material/Remove";
+import Divider from "@mui/material/Divider";
+import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 
 const Post = ({ post, setPosts }) => {
   const handleDelete = async () => {
@@ -16,21 +16,26 @@ const Post = ({ post, setPosts }) => {
 
   return (
     <Card variant="outlined">
-      <Stack margin={4} direction="row" spacing={4}
+      <Stack
+        margin={4}
+        direction="row"
+        spacing={4}
         divider={<Divider orientation="vertical" flexItem />}
         justifyContent="center"
-  alignItems="center">
+        alignItems="center"
+      >
         <h2>{post.time}</h2>
         <div>
-        <h4>{post.note}</h4>
-        <h6>{"Saved at: " + post.savedAt}</h6>
+          <h4>{post.note}</h4>
+          <h6>{"Saved at: " + post.savedAt}</h6>
         </div>
         <Button onClick={handleDelete} color="error">
           {/* andra ikoner funkar inte, code- ghosts again :D testa en gång till  */}
-          <RemoveIcon/>Remove
+          <RemoveIcon />
+          Remove
         </Button>
-    </Stack>
-      </Card>
+      </Stack>
+    </Card>
   );
 };
 

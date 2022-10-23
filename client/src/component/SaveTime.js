@@ -1,8 +1,5 @@
+import { TextField, Modal, Button, Stack } from "@mui/material";
 import { useState } from "react";
-
-import * as React from "react";
-import { TextField, Modal, Box, Button, Stack, IconButton } from "@mui/material";
-// import AddAlarmIcon from '@mui/icons-material/AddAlarm';
 
 const style = {
   position: "absolute",
@@ -11,13 +8,11 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "black",
-  // opacity: .8,
-  // bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
   justifyContent: "space-evenly",
-  color: "yellow"
+  color: "yellow",
 };
 
 const SaveTime = (props) => {
@@ -28,7 +23,7 @@ const SaveTime = (props) => {
     setInput(() => e.target.value);
   };
 
-  const handelSave = async (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
 
     //formating time as a string so it matches db
@@ -51,24 +46,19 @@ const SaveTime = (props) => {
   return (
     <Modal open={open} onClose={() => toggleModal(false)}>
       <Stack direction="row" sx={style}>
-        {/* <Box sx={style}> */}
-          <TextField
-            id="outlined-basic"
+        <TextField
+          id="outlined-basic"
           variant="outlined"
           color="warning"
-            value={input.note}
-            name="note"
+          value={input.note}
+          name="note"
           onChange={handleChange}
           focused
-          >Text</TextField>
-          
-          <Button variant="contained" color="warning" onClick={handelSave}>
-            Save
-          </Button>
-          {/* <IconButton>
-            <AddAlarmIcon/>
-          </IconButton> */}
-        {/* </Box> */}
+        ></TextField>
+
+        <Button variant="contained" color="warning" onClick={handleSave}>
+          Save
+        </Button>
       </Stack>
     </Modal>
   );
