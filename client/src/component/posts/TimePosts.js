@@ -1,12 +1,11 @@
-import { Stack } from "@mui/system";
 import { useEffect, useState } from "react";
 import Post from "./Post";
-import Divider from '@mui/material/Divider';
-
+import { Stack } from "@mui/system";
+import Divider from "@mui/material/Divider";
 
 const TimePosts = ({ fetchTimes, setFetchTimes }) => {
   const [posts, setPosts] = useState([]);
-
+  
   useEffect(() => {
     if (fetchTimes) {
       const fetchData = async () => {
@@ -26,8 +25,8 @@ const TimePosts = ({ fetchTimes, setFetchTimes }) => {
 
   return (
     <div>
-      {/* <Stack direction="row" spacing={10} justifyContent="center" alignItems="center"        divider={<Divider orientation="vertical" flexItem />}
->
+      {/* if we want some kind of a heading for saved times -->
+       <Stack direction="row" spacing={10} justifyContent="center" alignItems="center"        divider={<Divider orientation="vertical" flexItem />}
       <h2>Saved time</h2>
       <h2>note</h2>
         <h2>Delete</h2>
