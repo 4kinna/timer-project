@@ -41,6 +41,10 @@ const Stopwatch = () => {
     }, 10);
   };
 
+  const handleToggle = () => {
+     toggleModal(true)
+  }
+
   const toggleModal = (toggleVal) => {
     if (toggleVal) {
       // if we are opening the modal to save timer time with note we want to pause the timer
@@ -51,7 +55,7 @@ const Stopwatch = () => {
 
   return (
     <div>
-      <label>TIMER</label>
+      <label>STOPWATCH</label>
       <Time time={time} />
       <Buttons
         active={isActive}
@@ -60,10 +64,8 @@ const Stopwatch = () => {
         handlePause={handlePause}
         handleResume={handleResume}
         handleReset={handleReset}
+        handleToggle={handleToggle}
       />
-      <Button>
-        <SaveAltIcon onClick={() => toggleModal(true)} />
-      </Button>
 
       <SaveTime
         setFetchTimes={setFetchTimes}
