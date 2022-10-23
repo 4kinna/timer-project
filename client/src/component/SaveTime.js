@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import * as React from "react";
-import { TextField, Modal, Box, Button, Stack } from "@mui/material";
+import { TextField, Modal, Box, Button, Stack, IconButton } from "@mui/material";
+// import AddAlarmIcon from '@mui/icons-material/AddAlarm';
 
 const style = {
   position: "absolute",
@@ -9,10 +10,14 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "background.paper",
+  bgcolor: "black",
+  // opacity: .8,
+  // bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  justifyContent: "space-evenly",
+  color: "yellow"
 };
 
 const SaveTime = (props) => {
@@ -45,20 +50,25 @@ const SaveTime = (props) => {
 
   return (
     <Modal open={open} onClose={() => toggleModal(false)}>
-      <Stack spacing={2} alignItems="center">
-        <Box sx={style}>
+      <Stack direction="row" sx={style}>
+        {/* <Box sx={style}> */}
           <TextField
-            id="standard-basic"
-            variant="standard"
+            id="outlined-basic"
+          variant="outlined"
+          color="warning"
             value={input.note}
             name="note"
-            onChange={handleChange}
-          ></TextField>
-
-          <Button variant="contained" color="primary" onClick={handelSave}>
-            Save note
+          onChange={handleChange}
+          focused
+          >Text</TextField>
+          
+          <Button variant="contained" color="warning" onClick={handelSave}>
+            Save
           </Button>
-        </Box>
+          {/* <IconButton>
+            <AddAlarmIcon/>
+          </IconButton> */}
+        {/* </Box> */}
       </Stack>
     </Modal>
   );
