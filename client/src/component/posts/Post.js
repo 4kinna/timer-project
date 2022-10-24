@@ -1,7 +1,6 @@
 import { Card, Stack, Button, IconButton } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Divider from "@mui/material/Divider";
-import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 
 const Post = ({ post, setPosts }) => {
   const handleDelete = async () => {

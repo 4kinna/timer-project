@@ -1,10 +1,10 @@
-import { Button, Divider, IconButton } from "@mui/material";
+import { Stack } from "@mui/system";
+import { IconButton } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
-import StopIcon from "@mui/icons-material/Stop";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
+import HistoryIcon from '@mui/icons-material/History';
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
-import { Stack } from "@mui/system";
 
 const Buttons = (props) => {
   return (
@@ -14,7 +14,6 @@ const Buttons = (props) => {
         spacing={4}
         justifyContent="center"
         marginBottom={6}
-        // divider={<Divider orientation="vertical" flexItem />}
       >
         {!props.active && !props.isPaused ? (
           <IconButton onClick={props.handleStart}>
@@ -30,7 +29,7 @@ const Buttons = (props) => {
           </IconButton>
         )}
         <IconButton onClick={props.handleReset}>
-          <RestartAltIcon fontSize="large" color="success" />
+          <HistoryIcon fontSize="large" color="success" />
         </IconButton>
 
         {/* SAVE TIME BUTTON */}

@@ -1,5 +1,5 @@
-import { TextField, Modal, Button, Stack } from "@mui/material";
 import { useState } from "react";
+import { TextField, Modal, Button, Stack } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -12,7 +12,6 @@ const style = {
   boxShadow: 24,
   p: 4,
   justifyContent: "space-evenly",
-  color: "yellow",
 };
 
 const SaveTime = (props) => {
