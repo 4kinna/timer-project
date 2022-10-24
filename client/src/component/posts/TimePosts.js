@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Post from "./Post";
-import { Stack } from "@mui/system";
-import Divider from "@mui/material/Divider";
+import { Button } from "@mui/material";
 
 const TimePosts = ({ fetchTimes, setFetchTimes }) => {
   const [posts, setPosts] = useState([]);
@@ -23,19 +22,28 @@ const TimePosts = ({ fetchTimes, setFetchTimes }) => {
     }
   }, [fetchTimes, setFetchTimes]);
 
+  const handleDelete = async () => {
+    await fetch("http://localhost:5000/api/stopwatch/", {
+      method: "DELETE",
+    });
+
+    fetch("http://localhost:5000/api/stopwatch")
+    .then(res => res.json())
+    .then(data => setPosts(data))
+
+  };
+
   return (
     <div>
-      {/* if we want some kind of a heading for saved times -->
-       <Stack direction="row" spacing={10} justifyContent="center" alignItems="center"        divider={<Divider orientation="vertical" flexItem />}
-      <h2>Saved time</h2>
-      <h2>note</h2>
-        <h2>Delete</h2>
-        </Stack> */}
       {posts.map((post, index) => (
         <div key={index}>
           <Post post={post} setPosts={setPosts} />
         </div>
       ))}
+      {posts.length > 0 ? 
+        <Button onClick={handleDelete}>Delete All</Button> :
+        <h4>Start the Stopwatch</h4>
+          }
     </div>
   );
 };

@@ -36,4 +36,10 @@ route.delete("/:id", async (req, res) => {
   res.sendStatus(204);
 });
 
+route.delete("/", async (req, res) => {
+  await prisma.posts.deleteMany({});
+
+  res.sendStatus(204)
+})
+
 export default route;
