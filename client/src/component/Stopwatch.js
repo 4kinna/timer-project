@@ -3,8 +3,6 @@ import Buttons from "./Buttons";
 import Time from "./Time";
 import SaveTime from "./SaveTime";
 import TimePosts from "./posts/TimePosts";
-import SaveAltIcon from "@mui/icons-material/SaveAlt";
-import { Button } from "@mui/material";
 
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
@@ -42,8 +40,8 @@ const Stopwatch = () => {
   };
 
   const handleToggle = () => {
-     toggleModal(true)
-  }
+    toggleModal(true);
+  };
 
   const toggleModal = (toggleVal) => {
     if (toggleVal) {

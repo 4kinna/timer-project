@@ -2,8 +2,7 @@ import { Stack } from "@mui/system";
 import { IconButton } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import HistoryIcon from '@mui/icons-material/History';
+import HistoryIcon from "@mui/icons-material/History";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 
 const Buttons = (props) => {
