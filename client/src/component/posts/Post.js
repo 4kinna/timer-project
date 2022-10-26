@@ -29,7 +29,6 @@ const Post = ({ post, setPosts }) => {
           <h6>{"Saved at: " + post.savedAt}</h6>
         </div>
         <Button onClick={handleDelete} color="error">
-          {/* andra ikoner funkar inte, code- ghosts again :D testa en gång till  */}
           <RemoveIcon />
           Remove
         </Button>
